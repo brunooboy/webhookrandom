@@ -1,3 +1,4 @@
+require('dotenv').config(); // Importa e configura dotenv
 const Discord = require('ecliptic-selfbot-15');
 const { MessageEmbed } = require('ecliptic-selfbot-15');
 const client = new Discord.Client({
@@ -51,4 +52,4 @@ setInterval(async () => {
   }
 }, 3600000); // 1 hora
 
-client.login('MTMxOTQ4OTMwMDYxMzgyNDUyMg.GLC0wS.jiLtWM0J1Qe7euRGNU-G6zL_G60KpvO18iXlqs'); // Substitua pelo seu token de bot
+client.login(process.env.BOT_TOKEN); // Substitua pelo seu token de bot
