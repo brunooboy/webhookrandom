@@ -65,6 +65,6 @@ setInterval(async () => {
   } catch (error) {
     console.error(error);
   }
-}, 3600000); // 1 hora
+}, 3300000); // 1 hora
 
 client.login(process.env.BOT_TOKEN); // Substitua pelo seu token de bot
