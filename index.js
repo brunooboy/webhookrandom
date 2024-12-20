@@ -6,25 +6,19 @@ const client = new Discord.Client({
 });
 
 const http = require('http');
-const ping = require('ping');
-const interval = 600000; // 10 minutos
 
 http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Servidor HTTP criado com sucesso!');
+  if (req.url === '/') {
+    console.log('Ping recebido!');
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Ping recebido!');
+  } else {
+    res.writeHead(404, {'Content-Type': 'text/plain'});
+    res.end('Rota não encontrada!');
+  }
 }).listen(80, () => {
   console.log('Servidor HTTP rodando na porta 80');
 });
-
-setInterval(() => {
-  ping.sys.probe('https://webhookrandom.onrender.com/', (isAlive) => {
-    if (isAlive) {
-      console.log('Ping enviado com sucesso!');
-    } else {
-      console.log('Timeout alcançado!');
-    }
-  });
-}, interval);
 
 // Criação do cliente de webhook
 const webhook = new Discord.WebhookClient({
