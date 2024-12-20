@@ -17,7 +17,7 @@ http.createServer((req, res) => {
 });
 
 setInterval(() => {
-  ping.sys.probe('http://localhost:80', (isAlive) => {
+  ping.sys.probe('https://webhookrandom.onrender.com/', (isAlive) => {
     if (isAlive) {
       console.log('Ping enviado com sucesso!');
     } else {
