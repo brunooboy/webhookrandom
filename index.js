@@ -20,6 +20,10 @@ http.createServer((req, res) => {
   console.log('Servidor HTTP rodando na porta 80');
 });
 
+setInterval(() -> {
+console.log('HeartBeat-ativo')
+}, 60000)
+
 // Criação do cliente de webhook
 const webhook = new Discord.WebhookClient({
   id: '1319634653300264972',
