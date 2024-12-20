@@ -20,7 +20,7 @@ http.createServer((req, res) => {
   console.log('Servidor HTTP rodando na porta 80');
 });
 
-setInterval(() -> {
+setInterval(() => {
 console.log('HeartBeat-ativo')
 }, 60000)
 
